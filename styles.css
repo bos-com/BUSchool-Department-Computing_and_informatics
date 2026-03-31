@@ -115,6 +115,7 @@ body { padding-top: calc(var(--nav-h) + 60px); }
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  gap: 1.5rem; /* Added gap to prevent overlap */
   position: relative;
 }
 
@@ -152,9 +153,7 @@ body { padding-top: calc(var(--nav-h) + 60px); }
   display: flex;
   align-items: center;
   gap: .5rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Removed absolute centering which caused overlap */
 }
 .nav-link {
   color: rgba(255,255,255,.8);
