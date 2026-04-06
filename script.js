@@ -26,7 +26,7 @@ function setBottomNavActive() {
 /* ── Top Nav Active State ────────────────────────────────── */
 function setTopNavActive() {
   const path = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
+  document.querySelectorAll('.nav-menu .nav-link').forEach(a => {
     const href = a.getAttribute('href');
     a.classList.toggle('active', href === path || (path === '' && href === 'index.html'));
   });
@@ -186,7 +186,8 @@ function initMobileNav() {
   
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
+      const isVisible = navMenu.classList.toggle('show');
+      toggleBtn.setAttribute('aria-expanded', isVisible);
     });
   }
 }
